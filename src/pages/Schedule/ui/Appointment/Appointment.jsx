@@ -2,7 +2,7 @@ import styles from './Appointment.module.css';
 import { useState } from 'react';
 function Appointment() {
 
-    const [existing, setExisting] = useState(false);
+    const [existing, setExisting] = useState(true);
     return (
         <div className={styles.container}>
 
