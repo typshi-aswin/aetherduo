@@ -3,7 +3,6 @@ import { collection, getDocs, updateDoc, doc } from 'firebase/firestore';
 import { db } from "../../../../firebase";
 import styles from './TodayAppointments.module.css';
 import { FaUserCircle, FaCheck, FaUndo } from 'react-icons/fa';
-import { Timestamp } from 'firebase/firestore';
 
 function TodayAppointments() {
   const [appointments, setAppointments] = useState([]);
@@ -76,7 +75,7 @@ const data = querySnapshot.docs
               <FaUserCircle className={styles.profileIcon} size={28} />
               <div className={styles.nameContainer}>
                 <h1>{patient.patientName}</h1>
-                <p>{patient.procedure}</p>
+                <p>{patient.procedures}</p>
               </div>
             </div>
 

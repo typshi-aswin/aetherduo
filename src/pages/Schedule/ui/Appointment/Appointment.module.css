@@ -5,7 +5,6 @@
     color: var(--primary-text-color);
     background-color: var(--primary-container-color);
     width:20rem;
-    height: 30rem;
     border: 1px rgb(57, 52, 52) solid;
     border-radius: 10px;
     padding:1rem 1.2rem;
@@ -76,21 +75,23 @@
 }
 
 .inputField {
-    position: relative;
-    width: 17.5rem;
-    background-color: var(--secondary-container-color);
-    border: 1.5px rgb(77, 76, 76) solid;
-    border-radius: 5px;
-    height: 10rem;
-    padding-top: 2px; /* Creates space for top-aligned placeholder */
-  padding-left: 10px;
+  width: 17.5rem;
+  min-height: 5rem;
+  max-height: 10rem;
+  background-color: var(--secondary-container-color);
+  border: 1.5px rgb(77, 76, 76) solid;
+  border-radius: 5px;
+  color: var(--primary-text-color);
+  padding: 0.5rem 0.5rem;
+  font-family: inherit;
+  resize: vertical;
+  margin-top: 0.5rem;
+  box-sizing: border-box;
 }
 
-.input-field::placeholder {
-  position: absolute;
-  top: 5px; /* Adjust vertical position */
-  left: 10px; /* Adjust horizontal position */
-  transform-origin: left top;
+.inputField::placeholder {
+  color: var(--secondary-text-color);
+  opacity: 1;
 }
 
 .inputContainer input {
@@ -102,4 +103,40 @@
     height:2rem;
     margin-top:0.5rem;
 
+}
+
+.dateSlot {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.dropdown {
+  height: 2rem;
+  background-color: var(--secondary-container-color);
+  border: 1.5px rgb(77, 76, 76) solid;
+  border-radius: 5px;
+  color: var(--primary-text-color);
+  padding: 0 0.5rem;
+  margin-top: 0.5rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.dropdown:focus {
+  border-color: #3b82f6;
+}
+
+.dropdown option {
+  background: var(--secondary-container-color);
+  color: var(--primary-text-color);
+}
+
+.treatmentContainer p, .dentistContainer p, .dateContainer p{
+  padding-top: 1rem;
+  margin-bottom: 0;
+}
+
+.dateContainer{
+  margin-top: 0;
 }
