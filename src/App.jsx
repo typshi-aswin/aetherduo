@@ -1,12 +1,15 @@
-import styles from './App.css'
-
+import FrontDesk from './pages/FrontDesk/FrontDesk';
+import './App.module.css'
+import Navbar from '../components/NavBar';
 function App() {
 
   return (
-    <div className={styles.pageWrapper}>
-    
-    </div>
-  );
+    <div className='page-wrapper'>
+          <FrontDesk />
+          <Navbar />
+
+</div>
+); 
 }
 
 export default App;
