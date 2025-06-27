@@ -1,7 +1,7 @@
 .buttonContainer {
     display: flex;
     flex-direction: row;
-   justify-content: space-between;
+    gap: 1rem;
 }
 
 .buttonContainer button {
@@ -9,10 +9,10 @@
     border-radius: 5px;
     color: var(--primary-text-color);
     height: 2.5rem;
-    min-width: 6rem;
+    width: 100%;
     padding:0rem 2rem;
     cursor: pointer;
-    font-size: 0.7rem;;
+    font-size: 0.7rem;
 }
 
 .buttonContainer button:nth-child(1) {
@@ -21,8 +21,4 @@
 
 .buttonContainer button:nth-child(2) {
     background-color:#ef4444 ;
-}
-
-.buttonContainer button:nth-child(3) {
-    background-color:#10b981 ;
 }

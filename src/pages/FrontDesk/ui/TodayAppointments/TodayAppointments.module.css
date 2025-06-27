@@ -1,7 +1,6 @@
 .container {
     display:flex;
     flex-direction: column;
-    width: 50rem;
     height: 20rem;
     background-color: var(--primary-container-color);
     border: 1px rgb(57, 52, 52) solid;
@@ -82,7 +81,7 @@
     font-weight: 600;
 }
 
-.nameContainer p, .timeContainer p {
+.timeContainer p {
     font-size: 0.8rem;
     margin-top: -10px;
     color: var(--secondary-text-color);
@@ -100,4 +99,3 @@
     height:1.5rem;
     font-weight: 600;
 }
-

@@ -6,7 +6,6 @@ function Buttons() {
         <div className ={styles.buttonContainer}>
             <button onClick={() => {navigate(`/schedules`)}}> New Appointment </button>
             <button> Emergency </button>
-            <button> Check in</button>
          </div>
     )
 }
