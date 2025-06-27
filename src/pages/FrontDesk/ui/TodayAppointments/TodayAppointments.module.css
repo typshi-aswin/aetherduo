@@ -4,13 +4,12 @@
     width: 50rem;
     height: 20rem;
     background-color: var(--primary-container-color);
-    border:0.2px;
-    border-color: gray ;
+    border: 1px rgb(57, 52, 52) solid;
     border-radius: 10px;
     font-family: "Inter", sans-serif;
     padding: 1rem 2rem;
     color:white;
-    margin-top: 2rem;
+    margin-top: 1rem;
     overflow: hidden;
 }
 

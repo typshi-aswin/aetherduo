@@ -6,11 +6,11 @@ import styles from "./FrontDesk.module.css";
 function FrontDesk() {
     return (
         <div className={styles.row}>
-            <TodayAppointments />
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', flex: 1 }}>
-                <AtGlance />
+                <TodayAppointments />
                 <Notifications />
             </div>
+            <AtGlance />
         </div>
     );
 }

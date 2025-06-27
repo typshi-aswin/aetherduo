@@ -1,5 +1,9 @@
 .navbar {
+  background-color: rgba(26,26,26,255);
+  border: 1px rgb(57, 52, 52) solid;
   display: flex;
+  padding: 1rem;
+  border-radius: 12px;
   align-items: center;
   justify-content: space-between;
   width: 100%;
