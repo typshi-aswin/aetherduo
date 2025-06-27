@@ -12,11 +12,13 @@ function TodayAppointments () {
 
             <div className ={styles.tableContainer}>
                 {patientData.patients.map((patient, index) => (
-                    <div key= {index} className={styles.row}> 
+                    <div key= {index} className={styles.row}>
+                        <div className= {styles.profileContainer}>
                         <FaUserCircle className={styles.profileIcon} size={28} />
                         <div className ={styles.nameContainer}> 
                             <h1> {patient.name} </h1> 
                             <p> {patient.issue} </p>
+                        </div>
                         </div>
 
                         <div className ={styles.timeContainer}> 

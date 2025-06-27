@@ -8,7 +8,7 @@
     border-color: gray ;
     border-radius: 10px;
     font-family: "Inter", sans-serif;
-    padding: 2rem;
+    padding: 1rem 2rem;
     color:white;
     margin-top: 2rem;
 }
@@ -38,7 +38,21 @@
     border:none;
     border-radius: 10px;
     margin-bottom: 0.5rem;
-    padding: 1rem;
+    padding: 0.2rem 1rem;
+}
+
+.profileContainer {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+}
+
+.nameContainer, .timeContainer {
+    min-width: 3rem;
+    gap: -1rem;
+    text-wrap: nowrap;
 }
 
 .nameContainer h1, .timeContainer h1 {
@@ -47,6 +61,8 @@
 
 .nameContainer p, .timeContainer p {
     font-size: 0.8rem;
+    margin-top: -10px;
+    color: var(--secondary-text-color);
 }
 
 .tagDesign {
