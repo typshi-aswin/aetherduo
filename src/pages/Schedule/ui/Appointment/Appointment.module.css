@@ -150,3 +150,20 @@
 .dateContainer{
   margin-top: 0;
 }
+
+.scheduleBtn {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem 0;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.scheduleBtn:hover {
+  background-color: #2563eb;
+}

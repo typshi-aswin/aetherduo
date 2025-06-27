@@ -161,6 +161,8 @@ function Appointment({ date }) {
           placeholder="Additional Notes or Remarks"
         />
       </div>
+
+      <button className={styles.scheduleBtn} type="button">Schedule Appointment</button>
     </div>
   );
 }
