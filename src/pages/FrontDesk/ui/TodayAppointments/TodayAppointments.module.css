@@ -55,8 +55,13 @@
     text-wrap: nowrap;
 }
 
+.timeContainer{
+   text-align: right;
+}
+
 .nameContainer h1, .timeContainer h1 {
     font-size: 1rem;
+    font-weight: 600;
 }
 
 .nameContainer p, .timeContainer p {
