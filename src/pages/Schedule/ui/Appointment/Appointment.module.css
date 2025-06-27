@@ -92,3 +92,14 @@
   left: 10px; /* Adjust horizontal position */
   transform-origin: left top;
 }
+
+.inputContainer input {
+    width:17.5rem;
+     background-color: var(--secondary-container-color);
+    border: 1.5px rgb(77, 76, 76) solid;
+    border-radius: 5px;
+    padding: 0 0.5rem;
+    height:2rem;
+    margin-top:0.5rem;
+
+}

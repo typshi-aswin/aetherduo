@@ -26,6 +26,17 @@ function Appointment() {
                         placeholder="Search patient name"
                         className={styles.searchInput}
                     />
+                    </div>
+            )}
+
+            { !existing && (
+                <div className={styles.inputContainer}>
+                    <input placeholder='Name'/>
+                    <input placeholder='Phone Number' />
+                    <input placeholder='email'/>
+                    
+                 </div>
+            )}
 
                     <div className={styles.dateContainer}>
                         <p>Time Slot</p>
@@ -44,8 +55,7 @@ function Appointment() {
                         <input className={styles.inputField} type='text' placeholder='Additional Notes or Remarks' />
                      </div>
 
-                </div>
-            )}
+                
 
         </div>
     )
