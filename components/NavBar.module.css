@@ -11,10 +11,18 @@
   z-index: 100;
 }
 
+.leftContainer {
+  display: flex;
+  align-items: center;
+  gap:0.5rem;
+  cursor: pointer;
+}
+
 .left {
   display: flex;
   align-items: center;
   font-size: 1.1rem;
+
 }
 
 .brand {

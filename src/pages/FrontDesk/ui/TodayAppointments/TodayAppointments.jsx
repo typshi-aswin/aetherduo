@@ -1,48 +1,40 @@
 import { useEffect, useState } from 'react';
-import { collection, getDocs, updateDoc, doc } from 'firebase/firestore';
+import { collection, updateDoc, doc } from 'firebase/firestore';
 import { db } from "../../../../firebase";
 import styles from './TodayAppointments.module.css';
 import { FaUserCircle, FaCheck, FaUndo } from 'react-icons/fa';
+import { onSnapshot } from 'firebase/firestore';
 
 function TodayAppointments() {
   const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
-  const fetchAppointments = async () => {
-    try {
-      const querySnapshot = await getDocs(collection(db, 'appointments'));
+  const unsubscribe = onSnapshot(collection(db, 'appointments'), (querySnapshot) => {
+    const todayObj = new Date();
+    const today = todayObj.getFullYear() + '-' +
+      String(todayObj.getMonth() + 1).padStart(2, '0') + '-' +
+      String(todayObj.getDate()).padStart(2, '0'); // "YYYY-MM-DD"
 
-      const todayObj = new Date();
-      const today = todayObj.getFullYear() + '-' +
-        String(todayObj.getMonth() + 1).padStart(2, '0') + '-' +
-        String(todayObj.getDate()).padStart(2, '0'); // "YYYY-MM-DD" in local time
-      console.log(today)
+    const data = querySnapshot.docs
+      .map(doc => {
+        const docData = doc.data();
+        const startDate = docData.starttime?.toDate?.();
+        const dateStr = startDate?.toISOString()?.split('T')[0];
 
-const data = querySnapshot.docs
-  .map(doc => {
-    const docData = doc.data();
+        return {
+          id: doc.id,
+          ...docData,
+          starttimeFormatted: startDate?.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+          endtimeFormatted: docData.endtime?.toDate?.().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+          _dateString: dateStr
+        };
+      })
+      .filter(appointment => appointment._dateString === today);
 
-    // Convert starttime to JS Date
-    const startDate = docData.starttime?.toDate?.(); // convert Firestore timestamp
-    const dateStr = startDate?.toISOString()?.split('T')[0]; // extract "YYYY-MM-DD"
+    setAppointments(data);
+  });
 
-    return {
-      id: doc.id,
-      ...docData,
-      starttimeFormatted: startDate?.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      endtimeFormatted: docData.endtime?.toDate?.().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      _dateString: dateStr
-    };
-  })
-  .filter(appointment => appointment._dateString === today);
-
-      setAppointments(data);
-    } catch (error) {
-      console.error('Error fetching appointments:', error);
-    }
-  };
-
-  fetchAppointments();
+  return () => unsubscribe(); // Clean up listener on unmount
 }, []);
 
   // Toggle check-in status in Firestore and locally
