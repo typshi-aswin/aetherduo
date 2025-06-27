@@ -1,6 +1,6 @@
 .container {
     width: 29rem;
-    height: 15rem;
+    height: 14rem;
     background-color: var(--primary-container-color);
    border: 1px rgb(57, 52, 52) solid;
    border-radius: 10px;
@@ -11,17 +11,8 @@
 }
 
 .container p {
-    margin-top: -15px;
+    font-size: 1rem;
     font-weight: 500;
+    margin-top: -15px;
 
-}
-
-.doctorStatus {
-
-    margin-top: 2rem;
-    color: var(--primary-text-color);
-}
-
-.doctorStatus p {
-    font-size: 0.8rem;
 }
