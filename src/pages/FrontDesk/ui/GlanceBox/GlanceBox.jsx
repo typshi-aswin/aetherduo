@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from '../../../../firebase';
 import styles from './GlanceBox.module.css';
 
@@ -12,46 +12,40 @@ const GlanceBox = () => {
   });
 
   useEffect(() => {
-    const fetchStats = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, 'appointments'));
+    const unsubscribe = onSnapshot(collection(db, 'appointments'), (querySnapshot) => {
+      const todayObj = new Date();
+      const today = todayObj.getFullYear() + '-' +
+        String(todayObj.getMonth() + 1).padStart(2, '0') + '-' +
+        String(todayObj.getDate()).padStart(2, '0'); // YYYY-MM-DD
 
-        const todayObj = new Date();
-        const today = todayObj.getFullYear() + '-' +
-          String(todayObj.getMonth() + 1).padStart(2, '0') + '-' +
-          String(todayObj.getDate()).padStart(2, '0'); // YYYY-MM-DD
+      const todayAppointments = querySnapshot.docs
+        .map(doc => {
+          const data = doc.data();
+          const start = data.starttime?.toDate?.();
+          const dateStr = start?.toISOString()?.split('T')[0];
+          return {
+            id: doc.id,
+            ...data,
+            _dateString: dateStr
+          };
+        })
+        .filter(appt => appt._dateString === today);
 
-        const todayAppointments = querySnapshot.docs
-          .map(doc => {
-            const data = doc.data();
-            const start = data.starttime?.toDate?.();
-            const dateStr = start?.toISOString()?.split('T')[0];
-            return {
-              id: doc.id,
-              ...data,
-              _dateString: dateStr
-            };
-          })
-          .filter(appt => appt._dateString === today);
+      const total = todayAppointments.length;
+      const completed = todayAppointments.filter(a => a.checkin_status?.toLowerCase() === 'checkedin').length;
+      const noShow = total - completed;
+      const maxChairs = 5;
+      const idleChairs = Math.max(0, maxChairs - completed);
 
-        const total = todayAppointments.length;
-        const completed = todayAppointments.filter(a => a.checkin_status?.toLowerCase() === 'checkedin').length;
-        const noShow = total - completed;
-        const maxChairs = 5;
-        const idleChairs = Math.max(0, maxChairs - completed);
+      setStats({
+        total,
+        completed,
+        noShow,
+        idleChairs
+      });
+    });
 
-        setStats({
-          total,
-          completed,
-          noShow,
-          idleChairs
-        });
-      } catch (error) {
-        console.error('Error fetching stats:', error);
-      }
-    };
-
-    fetchStats();
+    return () => unsubscribe(); // 🔥 cleanup listener on unmount
   }, []);
 
   const statList = [
