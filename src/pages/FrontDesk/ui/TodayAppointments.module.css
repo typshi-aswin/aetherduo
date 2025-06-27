@@ -1,0 +1,27 @@
+.container {
+    display:flex;
+    flex-direction: column;
+    width: 40rem;
+    height: 20rem;
+    background-color: rgba(26,26,26,255);
+    border:0.2px;
+    border-color: gray ;
+    border-radius: 10px;
+    font-family: "Inter", sans-serif;
+    padding: 2rem;
+    margin: 2rem;
+    color:white;
+}
+
+.appointmentHeader {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.appointmentHeader h1 {
+    font-size: 2rem;
+}
+
+
