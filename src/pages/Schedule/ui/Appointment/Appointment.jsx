@@ -3,14 +3,14 @@ import { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../../../firebase';
 
-function Appointment() {
+function Appointment({ date }) {
   const [existing, setExisting] = useState(true);
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
   const [availableTimes, setAvailableTimes] = useState([]);
   const [doctors, setDoctors] = useState([]);
   const [procedures, setProcedures] = useState([]);
-
+  console.log(date);
   // generate 30-min interval future times
   useEffect(() => {
     const generateTimeSlots = () => {
