@@ -9,15 +9,15 @@
 }
 
 body, html {
-  overflow-x: hidden; /* Prevents horizontal scroll */
+  overflow-x: hidden; 
   width: 100%;
 }
 
 .page-wrapper {
   width: 100%;
-  max-width: 1200px;  /* tweak this based on the Figma layout width */
+  max-width: 1200px; 
   margin: 0 auto;
-  padding: 0 0.5rem;
+  padding: 1.5rem 0.5rem;
 }
 
 @media (max-width: 855px) {
