@@ -1,0 +1,38 @@
+.container {
+  padding: 20px;
+  padding-top: 5px;
+  background-color: rgba(26,26,26,255);
+  border-radius: 12px;
+  border: 1px rgb(57, 52, 52) solid;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 400px;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.card {
+  text-align: center;
+}
+
+.value {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.label {
+  font-size: 0.85rem;
+  color: grey;
+  margin-top: 4px;
+}

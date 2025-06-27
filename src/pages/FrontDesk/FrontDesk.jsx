@@ -1,8 +1,12 @@
 import TodayAppointments from "./ui/TodayAppointments";
+import AtGlance from "./ui/GlanceBox";
+import styles from "./FrontDesk.module.css";
+
 function FrontDesk() {
     return (
-        <div>
+        <div className={styles.row}>
             <TodayAppointments />
+            <AtGlance />
         </div>
     );
 }
