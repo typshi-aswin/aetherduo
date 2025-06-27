@@ -1,6 +1,6 @@
 .page-wrapper {
   width: 100%;
-  max-width: 1200px;  /* tweak this based on the Figma layout width */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -10,7 +10,3 @@
     padding: 0 1px;
   }
 }
-
-
-
-
