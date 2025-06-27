@@ -2,6 +2,8 @@
 :root {
   --primary-text-color: white;
   --secondary-text-color:#9ca3af;
+  --primary-container-color: rgba(26,26,26,255);
+  --secondary-container-color: #2a2a2a;
 }
 
 * {
