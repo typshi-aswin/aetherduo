@@ -29,10 +29,6 @@ function RegisterEmergency() {
                 <input placeholder='Add notes'/>
             </div>
 
-            <div className ={styles.availableContainer}>
-                <p> Available Doctors </p>
-                {/* <div> Here you add available doctors one by one</div> */}
-            </div>
         </div>
 
     )
