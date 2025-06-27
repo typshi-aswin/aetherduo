@@ -1,0 +1,100 @@
+.container {
+    display:flex;
+    flex-direction: column;
+    width: 45rem;
+    height:30rem;
+    background-color: var(--primary-container-color);
+    color: #ef4444;
+    padding: 2rem;
+    margin-top:1rem;
+    border-radius: 10px;
+}
+
+.container p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: -10px
+}
+
+.patientDetails {
+    display:flex;
+    flex-direction: row;
+    column-gap: 1rem;
+}
+
+.patientDetails input {
+    background-color: var(--secondary-container-color);
+    border: 1px rgb(57, 52, 52) solid;
+    border-radius: 5px;
+    height:2rem;
+    padding: 0 0.5rem;
+    width:100%;
+}
+
+.emergencyTypeContainer {
+    display:flex;
+    flex-direction: column;
+    margin-top:2rem;
+}
+
+.emergencyTypeContainer p, .severityRating p,.symptomsContainer p, .availableContainer p  {
+    font-size: 0.8rem;
+}
+
+.emergencyTypeContainer input {
+
+    background-color: var(--secondary-container-color);
+    border: 1px rgb(57, 52, 52) solid;
+    border-radius: 5px;
+    height:2rem;
+    padding: 0 0.5rem;
+    width:100%;
+
+}
+
+.severityRating {
+    margin-top: 2rem;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.buttonContainer button {
+    background-color: var(--secondary-container-color);
+    border:none;
+    border-radius: 5px;
+    width:12rem;;
+    height:2rem;
+    color:var(--primary-text-color);
+    cursor: pointer;
+
+}
+
+.buttonContainer button :active {
+    background-color: #10b981;
+}
+
+.symptomsContainer {
+    margin-top: 2rem;;
+}
+
+.symptomsContainer input {
+    width:100%;
+    background-color: var(--secondary-container-color);
+    border: 1.5px rgb(77, 76, 76) solid;
+    border-radius: 5px;
+    padding: 0 0.5rem;
+    height:4rem;
+    color: var(--primary-text-color);
+}
+
+.availableContainer {
+    display:flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
