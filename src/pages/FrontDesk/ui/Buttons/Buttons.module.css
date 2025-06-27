@@ -1,0 +1,28 @@
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+   justify-content: space-between;
+}
+
+.buttonContainer button {
+    border:none;
+    border-radius: 5px;
+    color: var(--primary-text-color);
+    height: 2.5rem;
+    min-width: 6rem;
+    padding:0rem 2rem;
+    cursor: pointer;
+    font-size: 0.7rem;;
+}
+
+.buttonContainer button:nth-child(1) {
+    background-color: #3c83f3;
+}
+
+.buttonContainer button:nth-child(2) {
+    background-color:#ef4444 ;
+}
+
+.buttonContainer button:nth-child(3) {
+    background-color:#10b981 ;
+}
