@@ -5,7 +5,7 @@ function Buttons() {
     return( 
         <div className ={styles.buttonContainer}>
             <button onClick={() => {navigate(`/schedules`)}}> New Appointment </button>
-            <button> Emergency </button>
+            <button onClick={() => {navigate(`/emergency`)}}> Emergency </button>
          </div>
     )
 }
