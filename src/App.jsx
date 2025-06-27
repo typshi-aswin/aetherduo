@@ -1,10 +1,10 @@
-import FrontDesk from './pages/FrontDesk/FrontDesk';
-import './App.module.css'
+import styles from './App.css'
+
 function App() {
 
   return (
-    <div className='page-wrapper'>
-          <FrontDesk />
+    <div className={styles.pageWrapper}>
+    
     </div>
   );
 }
