@@ -113,13 +113,11 @@
 
 .dateSlot select {
   flex: 1 1 0;
-  width: 100%;
-  min-width: 0;
+  width: 8.25rem;
 }
 
 .dropdown {
-  width: 100%;
-  min-width: 0;
+  width: 17.5rem;
   height: 2rem;
   background-color: var(--secondary-container-color);
   border: 1.5px rgb(77, 76, 76) solid;
