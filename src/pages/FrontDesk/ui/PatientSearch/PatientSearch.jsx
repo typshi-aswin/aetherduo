@@ -1,13 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from "../../../../firebase";
 import styles from './PatientSearch.module.css';
-import rawData from '../../../dummypatients.json';
-
-
 
 function PatientSearch() {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredPatients, setFilteredPatients] = useState([]);
-  const patientData = rawData.patients;
+  const [allPatients, setAllPatients] = useState([]);
+
+  useEffect(() => {
+    const fetchPatients = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'patients'));
+        const data = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        setAllPatients(data);
+      } catch (error) {
+        console.error('Error fetching patients:', error);
+      }
+    };
+
+    fetchPatients();
+  }, []);
 
   const handleInputChange = (e) => {
     const query = e.target.value;
@@ -18,7 +34,7 @@ function PatientSearch() {
       return;
     }
 
-    const results = patientData.filter((patient) =>
+    const results = allPatients.filter((patient) =>
       patient.name.toLowerCase().includes(query.toLowerCase())
     );
     setFilteredPatients(results);
@@ -43,7 +59,6 @@ function PatientSearch() {
           {filteredPatients.map((patient, index) => (
             <div key={index} className={styles.resultItem}>
               <p>{patient.name}</p>
-              <span>{patient.id}</span>
             </div>
           ))}
         </div>
