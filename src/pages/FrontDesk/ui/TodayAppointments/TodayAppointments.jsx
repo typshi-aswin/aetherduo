@@ -1,5 +1,5 @@
 import styles from './TodayAppointments.module.css';
-import patientData from '../dummypatients.json';
+import patientData from './dummypatients.json';
 import { FaUserCircle } from 'react-icons/fa';
 function TodayAppointments () {
 
