@@ -1,0 +1,64 @@
+.container {
+  background-color: rgba(26,26,26,255);
+  padding: 8px 20px;
+  padding-top: 0;
+  border-radius: 12px;
+  border: 1px rgb(57, 52, 52) solid;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--secondary-container-color);
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.icon {
+  font-size: 1.4rem;
+}
+
+.messageBlock {
+  flex: 1;
+}
+
+.message {
+  font-weight: 500;
+  color: white;
+}
+
+.time {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.pill {
+  background-color: #534224;
+  color: #f59e10;
+  border: none;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.pill:hover {
+  background-color: #f59e10;
+  color: #534224;
+}
