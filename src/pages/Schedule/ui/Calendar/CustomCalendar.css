@@ -1,0 +1,57 @@
+.customCalendar {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-family: 'Inter', sans-serif;
+  width: 53rem;
+  /* height:25rem; */
+  margin-top: 1rem;
+}
+
+.react-calendar__tile {
+  background: transparent;
+  color: white;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.react-calendar__tile--now {
+  background: #333;
+  color: #00ffff;
+}
+
+.react-calendar__tile--active {
+  background: #00aaff;
+  color: black;
+}
+
+.react-calendar__navigation button {
+  background: none;
+  color: white;
+}
+
+/* Disabled (past) dates styles */
+.react-calendar__tile:disabled {
+  background: transparent !important;
+  color: #555 !important;
+  cursor: not-allowed;
+}
+
+/* Hover effect for enabled dates */
+.react-calendar__tile:not(:disabled):hover {
+  background: #333 !important;
+}
+
+/* Active date (keep your existing style) */
+.react-calendar__tile--active {
+  background: #00aaff !important;
+  color: black !important;
+}
+
+/* Current day style (keep your existing style) */
+.react-calendar__tile--now {
+  background: #333 !important;
+  color: #00ffff !important;
+}
