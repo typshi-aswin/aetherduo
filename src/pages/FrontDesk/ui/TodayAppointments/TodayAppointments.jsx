@@ -13,7 +13,11 @@ function TodayAppointments() {
     try {
       const querySnapshot = await getDocs(collection(db, 'appointments'));
 
-      const today = new Date().toISOString().split('T')[0]; // "YYYY-MM-DD"
+      const todayObj = new Date();
+      const today = todayObj.getFullYear() + '-' +
+        String(todayObj.getMonth() + 1).padStart(2, '0') + '-' +
+        String(todayObj.getDate()).padStart(2, '0'); // "YYYY-MM-DD" in local time
+      console.log(today)
 
 const data = querySnapshot.docs
   .map(doc => {
