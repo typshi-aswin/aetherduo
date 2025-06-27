@@ -5,8 +5,8 @@ function App() {
 
   return (
     <div className='page-wrapper'>
+       <Navbar />
           <FrontDesk />
-          <Navbar />
 
 </div>
 ); 
