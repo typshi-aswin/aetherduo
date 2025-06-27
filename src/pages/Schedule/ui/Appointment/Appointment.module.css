@@ -1,0 +1,94 @@
+.container {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--primary-text-color);
+    background-color: var(--primary-container-color);
+    width:20rem;
+    height: 30rem;
+    border: 1px rgb(57, 52, 52) solid;
+    border-radius: 10px;
+    padding:1rem 1.2rem;
+    margin-top: 1rem;
+    
+}
+
+.container p {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top:0
+}
+
+.innerContainer1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.innerContainer1 p {
+    font-size:0.9rem;
+    font-weight:500;
+}
+
+.buttonContainer {
+    display:flex;
+    flex-direction: row;
+    color: var(--primary-text-color);
+    gap:1rem;
+}
+
+.buttonContainer button {
+    padding: 0 10px;
+    border-radius: 5px;
+    width:6rem;
+    height: 2rem;
+    color: var(--primary-text-color);
+
+}
+.activeButton {
+    background-color: #3b82f6;
+    border:none;
+}
+
+.inactiveButton{
+    background-color: var(--primary-container-color);
+    border: 0.5px rgb(158, 157, 157) solid;
+}
+
+.searchInput {
+    background-color: var(--secondary-container-color);
+    border: 1.5px rgb(77, 76, 76) solid;
+    border-radius: 5px;
+    width: 17.5rem;
+    height: 2rem;
+    color: var(--primary-text-color);
+    margin-top:1rem;
+    padding: 0.5rem;
+}
+
+.dateContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top:1rem;
+}
+
+.dateContainer p, .dentistContainer p,.treatmentContainer p {
+    font-size:0.9rem;
+}
+
+.inputField {
+    position: relative;
+    width: 17.5rem;
+    background-color: var(--secondary-container-color);
+    border: 1.5px rgb(77, 76, 76) solid;
+    border-radius: 5px;
+    height: 10rem;
+    padding-top: 2px; /* Creates space for top-aligned placeholder */
+  padding-left: 10px;
+}
+
+.input-field::placeholder {
+  position: absolute;
+  top: 5px; /* Adjust vertical position */
+  left: 10px; /* Adjust horizontal position */
+  transform-origin: left top;
+}
