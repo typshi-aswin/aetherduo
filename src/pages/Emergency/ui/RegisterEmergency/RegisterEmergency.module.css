@@ -2,7 +2,7 @@
     display:flex;
     flex-direction: column;
     width: 45rem;
-    height:30rem;
+    border: 1px rgb(57, 52, 52) solid;
     background-color: var(--primary-container-color);
     color: #f87272;
     padding: 2rem;
@@ -13,7 +13,7 @@
 .container p {
     font-size: 1.4rem;
     font-weight: 600;
-    margin-top: -10px
+    margin-top: -10px;
 }
 
 .patientDetails {
@@ -49,6 +49,7 @@
     height:2rem;
     padding: 0 0.5rem;
     width:100%;
+    margin-top: 1rem;
 
 }
 
@@ -66,21 +67,20 @@
 
 .buttonContainer button {
     background-color: var(--secondary-container-color);
-    border:none;
+    border: none;
     border-radius: 5px;
-    width:12rem;;
-    height:2rem;
-    color:var(--primary-text-color);
+    width: 12rem;
+    height: 2rem;
+    color: var(--primary-text-color);
     cursor: pointer;
-
 }
 
-.buttonContainer button :active {
+.buttonContainer button:active {
     background-color: #10b981;
 }
 
 .symptomsContainer {
-    margin-top: 2rem;;
+    margin-top: 2rem;
 }
 
 .symptomsContainer input {
@@ -97,4 +97,32 @@
     display:flex;
     flex-direction: column;
     margin-top: 2rem;
+}
+
+.emergencyButtonGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem 1rem;
+    margin-top: 0.8rem;
+}
+
+.emergencyButton {
+    background-color: var(--secondary-container-color);
+    border: 1px solid rgb(57, 52, 52);
+    border-radius: 5px;
+    height: 2rem;
+    padding: 0 0.5rem;
+    color: var(--primary-text-color);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.emergencyButton:hover {
+    background-color: #2f2f2f;
+}
+
+.emergencyButton.selected {
+    background-color: var(--secondary-container-color);
+    color: white;
 }
