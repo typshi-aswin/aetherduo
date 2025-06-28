@@ -8,6 +8,12 @@
   padding: 2rem 1rem;
   color: var(--primary-text-color);
   overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
 }
 
 .heading {
