@@ -1,4 +1,4 @@
-import styles from './Navbar.module.css';
+import styles from './NavBar.module.css';
 import { FaUserCircle } from 'react-icons/fa';
 import { IoHome } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';

@@ -7,6 +7,18 @@ import { FaExclamationTriangle } from 'react-icons/fa';
 const Notifications = () => {
   const [notifications, setNotifications] = useState([]);
 
+  function formatTimeAgo(timestamp) {
+    const now = new Date();
+    const then = timestamp?.toDate?.();
+    if (!then) return '';
+
+    const diff = Math.floor((now - then) / 1000); // in seconds
+
+    if (diff < 60) return 'just now';
+    if (diff < 3600) return `${Math.floor(diff / 60)} minute${diff < 120 ? '' : 's'} ago`;
+    if (diff < 86400) return `${Math.floor(diff / 3600)} hour${diff < 7200 ? '' : 's'} ago`;
+    return `${Math.floor(diff / 86400)} day${diff < 172800 ? '' : 's'} ago`;
+  }
   useEffect(() => {
     const q = query(
       collection(db, 'emergency_appointments'),
@@ -38,7 +50,9 @@ const Notifications = () => {
             <div className={styles.message}>
               Emergency added: {notifications[0].emergency_type} ({notifications[0].patient_name})
             </div>
-            <div className={styles.time}>just now</div>
+            <div className={styles.time}>
+              {formatTimeAgo(notifications[0].timestamp)}
+            </div>
           </div>
           <div className={styles.actions}>
             <button className={styles.pill}>View</button>
