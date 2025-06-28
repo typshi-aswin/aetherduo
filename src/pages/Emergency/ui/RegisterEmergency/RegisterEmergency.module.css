@@ -29,6 +29,7 @@
     height:2rem;
     padding: 0 0.5rem;
     width:100%;
+    color: var(--primary-text-color)
 }
 
 .emergencyTypeContainer {
