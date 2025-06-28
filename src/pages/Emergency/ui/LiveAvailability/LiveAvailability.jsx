@@ -21,15 +21,6 @@ function LiveAvailability() {
           const start = data.starttime?.toDate?.();
           const end = data.endtime?.toDate?.();
 
-          console.log('Appointment data:', {
-            patientName: data.patientName,
-            start: start,
-            end: end,
-            checkin_status: data.checkin_status,
-            now: now,
-            isActive: start && end && now >= start && now <= end && data.checkin_status === 'checkedin'
-          });
-
           return (
             start &&
             end &&

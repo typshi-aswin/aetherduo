@@ -5,6 +5,14 @@
   border-radius: 12px;
   border: 1px rgb(57, 52, 52) solid;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  overflow-y:auto;
+  scrollbar-width: none;
+    /* For Firefox */
+    -ms-overflow-style: none;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
 }
 
 .title {

@@ -17,7 +17,19 @@ function Appointment({ date }) {
   const [selectedDoctor, setSelectedDoctor] = useState('');
   const [selectedProcedure, setSelectedProcedure] = useState('');
   const [notes, setNotes] = useState('');
-  console
+  const [searchInput, setSearchInput] = useState('');
+const [patients, setPatients] = useState([]);
+const [filteredPatients, setFilteredPatients] = useState([]);
+
+  useEffect(() => {
+  const fetchPatients = async () => {
+    const snapshot = await getDocs(collection(db, 'patients'));
+    const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    setPatients(data);
+  };
+  fetchPatients();
+}, []);
+
   useEffect(() => {
     const generateTimeSlots = () => {
       const now = new Date();
@@ -119,12 +131,46 @@ function Appointment({ date }) {
       </div>
 
       {existing && (
-        <input
-          type="text"
-          placeholder="Search patient name"
-          className={styles.searchInput}
-        />
-      )}
+  <>
+    <input
+      type="text"
+      placeholder="Search patient name"
+      className={styles.searchInput}
+      value={searchInput}
+      onChange={(e) => {
+        const val = e.target.value;
+        setSearchInput(val);
+        const filtered = patients.filter(p =>
+          p.name.toLowerCase().includes(val.toLowerCase())
+        );
+        setFilteredPatients(filtered);
+      }}
+    />
+    {searchInput && filteredPatients.length > 0 && (
+      <div className={styles.searchResults}>
+        {filteredPatients.map((patient) => (
+          <div
+            key={patient.id}
+            className={styles.resultItem}
+            onClick={() => {
+  setPatientName(patient.name);
+  setPhone(patient.phone);
+  setEmail(patient.email);
+  setSearchInput(patient.name); 
+  setFilteredPatients([]);
+}}
+          >
+            <strong>{patient.name}</strong> — {patient.phone}
+          </div>
+        ))}
+      </div>
+    )}
+    {searchInput && filteredPatients.length === 0 && searchInput !== "" && (
+      <div className={styles.noResults}>No matching patients</div>
+    )}
+  </>
+)}
+
 
       {!existing && (
         <div className={styles.inputContainer}>
