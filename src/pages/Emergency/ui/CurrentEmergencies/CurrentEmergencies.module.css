@@ -1,18 +1,83 @@
 .container {
-    width: 29rem;
-    height: 14rem;
-    background-color: var(--primary-container-color);
-   border: 1px rgb(57, 52, 52) solid;
-   border-radius: 10px;
-   margin-top: 1rem;
-   padding: 2rem 1rem;
-   color: #f87272;
-
+  width: 29rem;
+  height: 14rem;
+  background-color: var(--primary-container-color);
+  border: 1px rgb(57, 52, 52) solid;
+  border-radius: 10px;
+  margin-top: 1rem;
+  padding: 2rem 1rem;
+  color: var(--primary-text-color);
+  overflow-y: auto;
 }
 
-.container p {
-    font-size: 1rem;
-    font-weight: 500;
-    margin-top: -15px;
+.heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: -10px;
+  color: #f87272;
+  margin-bottom: 1rem;
+}
 
+.noData {
+  color: grey;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.emergencyContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card {
+  background-color: var(--secondary-container-color);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  color: var(--primary-text-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.nameContainer,
+.severityContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nameContainer p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.nameContainer span {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.severityContainer p {
+  font-size: 0.9rem;
+}
+
+.pill {
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+}
+
+.high {
+  background-color: #dc2626;
+}
+
+.moderate {
+  background-color: #f59e0b; 
+}
+
+.low {
+  background-color: #10b981; 
 }

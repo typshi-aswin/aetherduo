@@ -1,27 +1,86 @@
 .container {
-    width: 29rem;
-    height: 15rem;
-    background-color: var(--primary-container-color);
-   border: 1px rgb(57, 52, 52) solid;
-   border-radius: 10px;
-   margin-top: 1rem;
-   padding: 2rem 1rem;
-   color: #f87272;
-
+  width: 29rem;
+  height: auto;
+  background-color: var(--primary-container-color);
+  border: 1px rgb(57, 52, 52) solid;
+  border-radius: 10px;
+  margin-top: 1rem;
+  padding: 2rem 1rem;
+  padding-bottom: 1rem;
+  color: #f87272;
 }
 
 .container p {
-    margin-top: -15px;
-    font-weight: 500;
+  margin-top: -15px;
+  font-weight: 500;
+}
 
+.chairsSection {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chairsRow {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chairIcon {
+  font-size: 1.8rem;
+}
+
+.chairOccupied {
+  color: #f87272;
+}
+
+.chairFree {
+  color: #10b981;
+}
+
+.chairsLabel {
+  font-size: .8rem;
+  color: grey;
 }
 
 .doctorStatus {
-
-    margin-top: 2rem;
-    color: var(--primary-text-color);
+  margin-top: 2rem;
+  color: var(--primary-text-color);
 }
 
 .doctorStatus p {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.doctorList {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.doctorItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.8rem .3rem 0;
+  border-radius: 5px;
+  font-size: 0.85rem;
+}
+
+.availableText {
+  color: #888;
+  font-size: 0.9rem;
+  padding-left: 10rem;
+}
+
+.pill {
+    background-color:#25463d;
+    border:none;
+    border-radius:25px;
+    padding:0.25rem 1.5rem;
+    color:#14b780;
+    
 }
