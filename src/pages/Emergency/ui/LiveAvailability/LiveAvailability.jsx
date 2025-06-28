@@ -20,7 +20,6 @@ function LiveAvailability() {
           const data = doc.data();
           const start = data.starttime?.toDate?.();
           const end = data.endtime?.toDate?.();
-          const now = new Date();
 
           console.log('Appointment data:', {
             patientName: data.patientName,

@@ -2,12 +2,12 @@
   background-color: #1e1e1e;
   border-radius: 12px;
   color: white;
-  border: none;
   padding: 1rem;
   font-family: 'Inter', sans-serif;
   width: 53rem;
   /* height:25rem; */
   margin-top: 1rem;
+  border: 1px rgb(57, 52, 52) solid;
 }
 
 .react-calendar__tile {

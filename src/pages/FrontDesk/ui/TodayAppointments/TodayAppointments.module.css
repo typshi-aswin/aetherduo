@@ -1,5 +1,5 @@
 .container {
-    display:flex;
+    display: flex;
     flex-direction: column;
     height: 20rem;
     background-color: var(--primary-container-color);
@@ -7,13 +7,13 @@
     border-radius: 10px;
     font-family: "Inter", sans-serif;
     padding: 1rem 2rem;
-    color:white;
+    color: white;
     margin-top: 1rem;
     overflow: hidden;
 }
 
 .appointmentHeader {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -25,19 +25,23 @@
 }
 
 .appointmentHeader p {
-    font-size:0.8rem;
+    font-size: 0.8rem;
     color: var(--secondary-text-color);
 }
 
 .tableContainer {
-    flex: 1; /* Takes remaining space */
-  overflow-y: auto; /* Enables vertical scrolling */
+    flex: 1;
+    /* Takes remaining space */
+    overflow-y: auto;
+    /* Enables vertical scrolling */
 }
 
 .tableContainer {
     /* Existing styles */
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For IE/Edge */
+    scrollbar-width: none;
+    /* For Firefox */
+    -ms-overflow-style: none;
+    /* For IE/Edge */
 }
 
 /* Hide scrollbar for Chrome, Safari, and Opera */
@@ -47,36 +51,43 @@
 
 
 .row {
-    display:flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     background-color: var(--secondary-container-color);
-    border:none;
+    border: none;
     border-radius: 10px;
     margin-bottom: 0.5rem;
     padding: 0.2rem 1rem;
+    flex-wrap: nowrap;
 }
 
 .profileContainer {
-    display:flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap:1rem;
+    gap: 1rem;
 }
 
-.nameContainer, .timeContainer {
+.nameContainer,
+.timeContainer {
     min-width: 3rem;
-    gap: -1rem;
-    text-wrap: nowrap;
+    white-space: nowrap;
 }
 
-.timeContainer{
-   text-align: right;
+.timeContainer {
+    width:100%;
+    max-width: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
 }
 
-.nameContainer h1, .timeContainer h1 {
+.nameContainer h1,
+.timeContainer h1 {
     font-size: 1rem;
     font-weight: 600;
 }
@@ -88,14 +99,14 @@
 }
 
 .tagDesign {
-    display:flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border:none;
+    border: none;
     border-radius: 20px;
     font-size: 0.7rem;
     padding: 0 0.5rem;
-    height:1.5rem;
+    height: 1.5rem;
     font-weight: 600;
 }
