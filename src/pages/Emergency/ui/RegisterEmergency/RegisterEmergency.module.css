@@ -126,3 +126,31 @@
     background-color: var(--secondary-container-color);
     color: white;
 }
+
+.emergencyButton.selected {
+  background-color: #f87272;
+  color: white;
+  font-weight: 600;
+  border-color: #f87272;
+}
+
+.buttonContainer button:active,
+.emergencyButton:active {
+  transform: scale(0.97);
+}
+
+.submitButton {
+  margin-top: 1rem;
+  background-color: #f87272;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  height: 2.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submitButton:hover {
+  background-color: #e65c5c;
+}
