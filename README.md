@@ -18,6 +18,13 @@ Front desk staff can easily toggle patient check-in status with visual indicator
 ### Patient Search
 Quick patient lookup with real-time filtering as you type, supporting both existing patient selection and new patient registration.
 
+
+https://github.com/user-attachments/assets/3c4eb197-61ad-447b-9926-7ceb61316abf
+
+
+
+
+
 ## Features
 ### Front Desk Dashboard
 - **Today's Appointments**: Real-time view of daily appointments with check-in status management
