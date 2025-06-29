@@ -110,3 +110,17 @@
     height: 1.5rem;
     font-weight: 600;
 }
+
+.noAppointment {
+
+    background-color: var(--secondary-container-color);
+    height: 30%;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    color: var(--secondary-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

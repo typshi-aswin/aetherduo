@@ -59,7 +59,7 @@ function TodayAppointments() {
         <h1>Today's Appointments</h1>
         <p>{appointments.length} total appointments</p>
       </div>
-
+    { appointments && ( 
       <div className={styles.tableContainer}>
         {appointments.map((patient, index) => (
           <div key={patient.id || index} className={styles.row}>
@@ -98,7 +98,14 @@ function TodayAppointments() {
             </button>
           </div>
         ))}
+
+
       </div>
+      )}
+
+      {(!appointments || appointments.length === 0) && (
+        <div className ={styles.noAppointment}> No Appointments Today. </div>
+      )}
     </div>
   );
 }
